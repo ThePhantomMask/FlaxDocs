@@ -79,3 +79,7 @@ void MyType::Deserialize(DeserializeStream& stream, ISerializeModifier* modifier
 }
 ```
 ***
+
+## Serialization callbacks
+
+Flax supports serialization callback methods that can be used to manipulate an object before and/or after its serialization and deserialization by the serializer. That can be used to perform more advanced data upgrading after version changes. See [C++](../cpp/serialization.md) and [C#](../serialization/index.md) documentation sections to learn more.

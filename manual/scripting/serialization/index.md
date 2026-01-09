@@ -29,14 +29,14 @@ Here are listed various hints about Flax serialization:
 * Avoid recursive references for custom objects types. It's better to use loop-references for scene objects.
 * When performing code refactoring see [this tutorial](../advanced/refactoring-renaming.md) about supporting old data format loading
 
-## Serialization Callbacks
+## Serialization callbacks
 
 Flax supports serialization callback methods. A callback can be used to manipulate an object before and/or after its serialization and deserialization by the serializer.
 
-* OnSerializing
-* OnSerialized
-* OnDeserializing
-* OnDeserialized
+* `OnSerializing`
+* `OnSerialized`
+* `OnDeserializing`
+* `OnDeserialized`
 
 Example:
 
