@@ -29,3 +29,36 @@
 | **Navigate Left** | The name of the input action for performing UI navigation Left (from Input Settings). |
 | **Navigate Right** | The name of the input action for performing UI navigation Right (from Input Settings). |
 | **Navigate Submit** | The name of the input action for performing UI navigation Submit (from Input Settings). |
+
+## Rendering Canvas to GPU Texture
+
+Canvas can be rendered directly to the GPU Texture for use in materials or VFX. Simply change the `RenderMode` to `GPUTexture` and provide `OutputTexture` that will be used as an output image for the canvas elements. See an example script:
+
+```cs
+using FlaxEngine;
+
+namespace Game;
+
+public class RenderCanvasToTexture : Script
+{
+    public GPUTexture MyTexture;
+
+    public override void OnEnable()
+    {
+        // Allocate a new GPU texture and resize it
+        MyTexture = new GPUTexture();
+        var desc = GPUTextureDescription.New2D(300, 200, PixelFormat.R8G8B8A8_UNorm);
+        MyTexture.Init(ref desc);
+
+        // Link texture to the canvas
+        Actor.As<UICanvas>().OutputTexture = MyTexture;
+    }
+
+    public override void OnDisable()
+    {
+        // Release reference and dispose texture memory
+        Actor.As<UICanvas>().OutputTexture = null;
+        Destroy(ref MyTexture);
+    }
+}
+```
