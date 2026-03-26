@@ -42,3 +42,4 @@ Flax Engine is very extensible which allows developers to create custom solution
 * [RmlUi](https://github.com/GoaLitiuM/RmlUi) - HTML/CSS user interface library `RmlUi` wrapper ([samples](https://github.com/GoaLitiuM/FlaxRmlUiSamples))
 * [Flax FMOD](https://github.com/Tryibion/FlaxFmod) - FMOD audio library integration
 * [Flax Simple Save System](https://github.com/Tryibion/FlaxSimpleSaveSystem) - save system that includes save slots, encryption, hashing, and data caching.
+* [Audio Reactor](https://github.com/holdulv-2nd/AudioReactor) - real-time audio visualization using NAudio to sync game world (lights, cameras, UI, objects) to the beat.
